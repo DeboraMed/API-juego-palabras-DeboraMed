@@ -1,5 +1,6 @@
 package com.example.juegoDePalabrasAPP.modelo;
 
+import com.example.juegoDePalabrasAPP.Enum.Dificultad;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,10 +29,9 @@ public class JuegoPalabra {
     @JoinColumn(name="id_juego")
     private Juego id_juego;
 
-    /*
-    TODO: NO PUEDE IMPORTAR DIFICILTAD
+
     @Enumerated(EnumType.STRING)
     @Column(name="id_dificultad")
     Dificultad id_dificultad;
-    */
+
 }

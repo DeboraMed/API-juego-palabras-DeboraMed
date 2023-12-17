@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-abstract class ServicioJugador implements RepositorioJugador {
+public abstract class ServicioJugador implements RepositorioJugador {
 
     private final RepositorioJugador repositorioJugador;
 
@@ -29,7 +29,7 @@ abstract class ServicioJugador implements RepositorioJugador {
     @Override
     public Jugador save(Jugador jugador) {
         jugador.setCreationDate(LocalDateTime.now());
-        jugador.setModificationDate(LocalDateTime.now());
+        jugador.setFechaModificacion(LocalDateTime.now());
         return repositorioJugador.save(jugador);
     }
 
@@ -48,10 +48,13 @@ abstract class ServicioJugador implements RepositorioJugador {
         return repositorioJugador.findByEquipoId(equipo.getId_equipo());
     }
 
+    /*
     @Override
     public List<Jugador> obtenerJugadoresPorEquipo(Long id_equipo) {
         return repositorioJugador.findByEquipoId(id_equipo);
     }
+    */
+
 }
 
 

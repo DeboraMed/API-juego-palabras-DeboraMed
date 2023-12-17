@@ -14,6 +14,7 @@ public interface RepositorioJugador extends JpaRepository<Jugador,Long> {
     void deleteById(Long id);
     boolean existsById(Long id);
     List<Jugador> findByEquipo(Equipo equipo);
-    List<Jugador> obtenerJugadoresPorEquipo(Long id_equipo);
+
+    //List<Jugador> obtenerJugadoresPorEquipo(Long id_equipo);
     List<Jugador> findByEquipoId(Long id_equipo);
 }

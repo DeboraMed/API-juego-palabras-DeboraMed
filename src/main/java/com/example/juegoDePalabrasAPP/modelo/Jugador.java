@@ -18,8 +18,8 @@ import java.time.LocalDateTime;
 public class Jugador {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_jugador", nullable = false)
-    private Long id_jugador;
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String usuario;
     private Long puntuacion;
     private String avatar;
@@ -36,8 +36,8 @@ public class Jugador {
 
     // Getter y Setter
 
-    public Long getId_jugador() {
-        return id_jugador;
+    public Long getId() {
+        return id;
     }
 
     public String getUsuario() {
@@ -56,8 +56,8 @@ public class Jugador {
         return equipo;
     }
 
-    public void setId_jugador(Long id_jugador) {
-        this.id_jugador = id_jugador;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setUsuario(String usuario) {
@@ -72,13 +72,13 @@ public class Jugador {
         this.avatar = avatar;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
-    }
+    public void setEquipo(Equipo equipo) { this.equipo = equipo; }
 
     public void setCreationDate(LocalDateTime now) {
+        fechaCreacion = now;
     }
 
-    public void setModificationDate(LocalDateTime now) {
+    public void setFechaModificacion(LocalDateTime now) {
+        fechaModificacion = now;
     }
 }
