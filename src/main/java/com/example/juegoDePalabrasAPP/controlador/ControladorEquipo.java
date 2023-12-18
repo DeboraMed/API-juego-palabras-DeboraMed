@@ -20,6 +20,7 @@ public class ControladorEquipo {
 
     @Autowired
     public ControladorEquipo(RepositorioEquipo repositorioEquipo){
+
         this.repositorioEquipo = repositorioEquipo;
     }
 
