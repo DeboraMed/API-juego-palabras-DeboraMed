@@ -9,6 +9,7 @@ public class JugadorNoEncontrado extends RuntimeException {
         super("ERROR: Los jugadores no se encuantran.");
     }
     public JugadorNoEncontrado(Long id){
+
         super("ERROR: El jugador con id:" + id +" solicitado no se encuentra.");
     }
 }

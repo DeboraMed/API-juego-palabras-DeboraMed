@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/jugador")
+@RequestMapping("/mijugador")
 public class ControladorJugador {
 
     private final RepositorioJugador repositorioJugador;
@@ -38,7 +38,7 @@ public class ControladorJugador {
         return new ResponseEntity<>(jugador, HttpStatus.OK);
     }
 
-    // Crear jugador nuevo
+    // Crear jugador
     @PostMapping("/")
     public ResponseEntity<?> newJugador(@RequestBody Jugador nuevoJugador){
         Jugador newJugador = new Jugador();
@@ -49,10 +49,10 @@ public class ControladorJugador {
         newJugador.setCreationDate(LocalDateTime.now());
         newJugador.setEquipo(nuevoJugador.getEquipo());
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(repositorioJugador.save(nuevoJugador));
+        return ResponseEntity.status(HttpStatus.CREATED).body(repositorioJugador.save(newJugador));
     }
 
-    // Modificar jugador existente
+    // Modificar jugador
     @PutMapping("/{id}")
     public Jugador updateJugador(@RequestBody Jugador actualizaJugador, @PathVariable Long id){
         if(repositorioJugador.existsById(id)){
@@ -68,6 +68,7 @@ public class ControladorJugador {
         }
     }
 
+    // Elimina jugador
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         Jugador jugador = repositorioJugador.findById(id).orElseThrow(() -> new JugadorNoEncontrado(id));

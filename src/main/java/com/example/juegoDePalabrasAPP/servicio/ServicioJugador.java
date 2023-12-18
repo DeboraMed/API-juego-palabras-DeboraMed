@@ -45,7 +45,7 @@ public abstract class ServicioJugador implements RepositorioJugador {
 
     @Override
     public List<Jugador> findByEquipo(Equipo equipo) {
-        return repositorioJugador.findByEquipoId(equipo.getId_equipo());
+        return repositorioJugador.findByEquipoId(equipo.getId());
     }
 
     /*

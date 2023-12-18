@@ -29,7 +29,7 @@ public class Equipo {
 
     // Getter y Setter
 
-    public Long getId_equipo() {
+    public Long getId() {
         return id;
     }
 
@@ -45,8 +45,8 @@ public class Equipo {
         return puntuacion;
     }
 
-    public void setId_equipo(Long id_equipo) {
-        this.id = id_equipo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setNombre_equipo(String nombre_equipo) {

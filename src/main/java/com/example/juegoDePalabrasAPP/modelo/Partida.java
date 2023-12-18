@@ -19,7 +19,7 @@ public class Partida {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_partida", nullable = false)
     private Long id_partida;
-    private Long num_intento;
+    private Long num_intento = 5L;
     private String palabra_intento;
     @Column(name = "hora_comienzo")
 
