@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-import java.time.LocalDateTime;
-
 
 @Data
 @NoArgsConstructor
@@ -24,15 +22,11 @@ public class Jugador {
     private Long puntuacion;
     private String avatar;
 
-    @Column(name = "fecha_creacion")
-    private LocalDateTime fechaCreacion;
-
-    @Column(name = "fecha_modificacion")
-    private LocalDateTime fechaModificacion;
     @ManyToOne
     @NotFound(action = NotFoundAction.IGNORE)
     @JoinColumn(name="id_equipo")
-    private Equipo equipo;
+    private Equipo id_equipo;
+
 
     // Getter y Setter
 
@@ -53,7 +47,7 @@ public class Jugador {
     }
 
     public Equipo getEquipo() {
-        return equipo;
+        return id_equipo;
     }
 
     public void setId(Long id) {
@@ -72,13 +66,7 @@ public class Jugador {
         this.avatar = avatar;
     }
 
-    public void setEquipo(Equipo equipo) { this.equipo = equipo; }
+    public void setEquipo(Equipo equipo) { this.id_equipo = equipo; }
 
-    public void setCreationDate(LocalDateTime now) {
-        fechaCreacion = now;
-    }
 
-    public void setFechaModificacion(LocalDateTime now) {
-        fechaModificacion = now;
-    }
 }

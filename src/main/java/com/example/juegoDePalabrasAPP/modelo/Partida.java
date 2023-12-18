@@ -38,6 +38,8 @@ public class Partida {
     @JoinColumn(name="id_juego")
     private Juego id_juego;
 
+    // Getter y Setter
+
     public Long getId_partida() {
         return id_partida;
     }

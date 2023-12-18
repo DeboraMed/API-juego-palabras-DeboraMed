@@ -6,7 +6,6 @@ import com.example.juegoDePalabrasAPP.modelo.Jugador;
 import org.springframework.stereotype.Service;
 import com.example.juegoDePalabrasAPP.repositorio.RepositorioJugador;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,8 +27,6 @@ public abstract class ServicioJugador implements RepositorioJugador {
 
     @Override
     public Jugador save(Jugador jugador) {
-        jugador.setCreationDate(LocalDateTime.now());
-        jugador.setFechaModificacion(LocalDateTime.now());
         return repositorioJugador.save(jugador);
     }
 
@@ -48,12 +45,11 @@ public abstract class ServicioJugador implements RepositorioJugador {
         return repositorioJugador.findByEquipoId(equipo.getId());
     }
 
-    /*
     @Override
     public List<Jugador> obtenerJugadoresPorEquipo(Long id_equipo) {
         return repositorioJugador.findByEquipoId(id_equipo);
     }
-    */
+
 
 }
 
