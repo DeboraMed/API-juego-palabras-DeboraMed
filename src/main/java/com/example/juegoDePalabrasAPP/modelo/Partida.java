@@ -22,11 +22,9 @@ public class Partida {
     private Long num_intento = 5L;
     private String palabra_intento;
     @Column(name = "hora_comienzo")
-
     private LocalDateTime hora_comienzo;
 
     @Column(name = "hora_final")
-
     private LocalDateTime hora_final;
     private Long puntuacion;
 
@@ -103,4 +101,5 @@ public class Partida {
     public void setId_juego(Juego id_juego) {
         this.id_juego = id_juego;
     }
+
 }
